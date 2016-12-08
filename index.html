@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+		<title>ASTEROIDS</title>
+	</head>
+	<body id="" onkeydown="keyPressed(event)" onkeyup="keyReleased(event)" style="padding:0;margin:0;background-color:#000;">
+		<audio src="sound/YOURFIRE1.WAV" id="player_fire" autostart="false"></audio>
+		<audio src="sound/LARGEXPL1.WAV" id="large_expl" autostart="false"></audio>
+		<audio src="sound/MEDUMXPL1.WAV" id="medium_expl" autostart="false"></audio>
+		<audio src="sound/SMALLXPL1.WAV" id="small_expl" autostart="false"></audio>
+		<audio src="sound/BEAT11.WAV"    id="beat1" autostart="false"></audio>
+		<audio src="sound/BEAT21.WAV"    id="beat2"  autostart="false"></audio>
+		<audio src="sound/LSAUCER.WAV"   id="lsaucer" autostart="false" loop></audio>
+		<audio src="sound/SSAUCER.WAV"   id="ssaucer" autostart="false" loop></audio>
+		<audio src="sound/UFOFIRE1.WAV"  id="ufo_fire" autostart="false"></audio>
+		<audio src="sound/THRUST.WAV"    id="thrust" autostart="false" loop></audio>
+		<audio src="sound/EXTRAMAN1.WAV" id="extra" autostart="false" loop></audio>
+
+		<font color="#000000" size="3" face="Arial">
+
+		<canvas id="myCanvas" width="700" height="600" style="border:0px"></canvas>
+		<script type="text/javascript" src="Asteroids.js"></script>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+	</body>
+</html>
