@@ -206,15 +206,21 @@ function processKey(a, b) {
         keyRight = b;
         break;
     case 32: //SPACEBAR - key button
-        keyHyperSpace = b;
+        keyFire = b;
         break;
     case 13: //ENTER - small button
         keyStart1 = b;
         keyCoin1 = b;
-        keyFire = b;
+        keyHyperSpace = b;
         break;
     case 38: //UP ARROW
         keyThrust = b;
+        break;
+    case 82: //R (reset) key
+        location.reload();
+        break;
+    case 27: //ESCAPE key
+        close();
         break;
     }
 }

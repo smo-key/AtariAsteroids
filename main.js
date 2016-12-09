@@ -13,7 +13,7 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({width: 700, height: 600, resizable: true, backgroundColor: "#000", fullscreen: true, title: "Atari ASTEROIDS", frame: false});
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -23,7 +23,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -55,25 +55,6 @@ app.on('activate', function () {
     createWindow()
   }
 })
-
-var SerialPort = require("serialport");
-const SERIALPORT = "COM6"; ///dev/tty-usbserial1
-var port = new SerialPort(SERIALPORT,
-{
-   baudRate: 9600,
-   parser: SerialPort.parsers.readline('\n')
-});
-
-port.on('open', function() {
-  console.log("Port open!");
-});
-port.on('data', function (data) {
-  console.log('Data: ' + data);
-});
-port.on('error', function(err) {
-  console.error('Error: ', err.message);
-})
-
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
