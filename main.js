@@ -56,5 +56,24 @@ app.on('activate', function () {
   }
 })
 
+var SerialPort = require("serialport");
+const SERIALPORT = "COM6"; ///dev/tty-usbserial1
+var port = new SerialPort(SERIALPORT,
+{
+   baudRate: 9600,
+   parser: SerialPort.parsers.readline('\n')
+});
+
+port.on('open', function() {
+  console.log("Port open!");
+});
+port.on('data', function (data) {
+  console.log('Data: ' + data);
+});
+port.on('error', function(err) {
+  console.error('Error: ', err.message);
+})
+
+
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
